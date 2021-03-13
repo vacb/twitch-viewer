@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, 
           Route,
-          Link 
+          //Link
         } from "react-router-dom";
 import Games from './components/Games';
 import Header from './components/Header';
