@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../api';
+import api from '../api';
 
 
 const Games = () => {
@@ -7,7 +7,7 @@ const Games = () => {
 
     useEffect(() => {        
         const fetchData = async () => {
-            const result = await applicationCache.get(process.env.GET_GAMES);
+            const result = await api.get(process.env.GET_GAMES);
             console.log(result.data);
         };
         fetchData();
