@@ -23,7 +23,6 @@ const Games = () => {
             }
             console.log(`Status: ${res.statusCode}`);
             //console.log(body);
-    
             callback(res);
         });
     };
@@ -65,8 +64,8 @@ const Games = () => {
                
                 let result = JSON.parse(body).data;
 
-                let dataArray = result;
-                dataArray.map(game => {
+                //let dataArray = result;
+                let dataArray = result.map(game => {
                     let newUrl = game.box_art_url.replace('{width}', '300').replace('{height}', '300');
                     game.box_art_url = newUrl; 
                     return game;
@@ -85,13 +84,13 @@ const Games = () => {
     return (
         <div className='container'>
             <div className='row justify-content-center pb-2'>
-                <h1>Popular Games</h1>
+                <h1>Top Games</h1>
             </div>
             <div className='row justify-content-center'>
                 {games.map(game => (
                     <div className='col-4 pb-3'>
                         <div className='card'>
-                            <img className="card-img-top" src={game.box_art_url} alt={game.name}/>
+                            <img className='card-img-top' src={game.box_art_url} alt={game.name}/>
                             <div className = 'card-body'>
                                 <h5 className='card-title'>{game.name}</h5>
                                 <button className='btn btn-dark'>
